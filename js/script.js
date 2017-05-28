@@ -148,7 +148,7 @@ function fraco () {
     return valorfraco
 }
 
-//
+//Define Paladar e Preço
 function definepaladar () {
 //adicionar variaveis
 dpsuave = suave();
@@ -157,34 +157,22 @@ dpforte = forte();
 
 //Paladar
 if (dpfraco == 0 && dpsuave == 0 && dpforte == 0) {
-    paladar = "Não é Cuba Livre"; 
+    paladar = "Não é Cuba Livre";
+    preco = 0; 
 }else if ( dpfraco > dpsuave && dpfraco > dpforte ) {
     paladar = "Fraco";
-}else if( dpsuave > dpfraco && dpsuave > dpforte ){
+    preco = 15;
+}else if( dpsuave >= dpfraco && dpsuave > dpforte ){
     paladar = "Suave";
-}else if( dpforte > dpfraco && dpforte > dpsuave){
+    preco = 20;
+}else if( dpforte >= dpfraco && dpforte >= dpsuave){
     paladar = "Forte";
+    preco = 25;
 };
 return paladar;
 }
 
-//Define Preço
-function definepreco () {
-//adicionar variaveis
-dvpsuave = suave();
-dvpfraco = fraco();
-dvpforte = forte();
-preco = 0;
-//Preço
-if ( dvpfraco > dvpsuave && dvpfraco > dvpforte ) {
-    preco = 15;
-}else if( dvpsuave > dvpfraco && dvpsuave > dvpforte ){
-    preco = 20;
-}else if( dvpforte > dvpfraco && dvpforte > dvpsuave){
-    preco = 25;
-};
-return preco;
-}
+
 
 
 //Mostra a Saídas
@@ -200,7 +188,7 @@ conteudos='';
     conteudos+='<p><b>Expressões da Questões 3</b><br>';
     conteudos+=( 'Forte: '+forte()+' Suave: '+suave()+' Fraco: '+fraco())
     conteudos+=('<p><b>'+definepaladar()+'</b>');
-    conteudos+=('<p><b>R$'+definepreco()+",00</b>");
+    conteudos+=('<p><b>R$'+ preco+",00</b>");
     $('#saidas').html(conteudos);
     $('#saidas').show();
 }

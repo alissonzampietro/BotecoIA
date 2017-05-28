@@ -10,12 +10,28 @@ h1{
 	color: #ffcc00;
 }
 
-input{
+#qtdrefri{
 	padding: 5px;
 	width: 50px;
 	alignment-adjust:central;
 	border-radius: 8px;
 }
+
+#qtdrun{
+	padding: 5px;
+	width: 50px;
+	alignment-adjust:central;
+	border-radius: 8px;
+}
+
+#qtdgelo{
+	padding: 5px;
+	width: 50px;
+	alignment-adjust:central;
+	border-radius: 8px;
+}
+
+
 
 #colunas{
 	-webkit-animation-name: first;
@@ -53,4 +69,39 @@ input{
 #btnmix:active {
  	background-color: #404040;
  	border-bottom: solid 1px #1a1a1a;
+}
+
+.cc-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+
+.coca{background-image:url('../images/coca.png');}
+.pepsi{background-image:url('../images/pepsi.png');}
+
+.cc-selector input:active +.drinkcard-cc{opacity: .9;}
+.cc-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:130px;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+    -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+    filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    filter: brightness(1.2) grayscale(.5) opacity(.9);
 }
