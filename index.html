@@ -17,17 +17,22 @@
     			<input id="pepsi" type="radio" name="credit-card" value="pepsi" onclick="escolhapepsi() "> 
                 <label class="drinkcard-cc pepsi"for="pepsi"></label>       
             </div><br>
-        <div><b>Digite a quantidade em ml</b></div>
 		<div id="coluna" style="font-size: 20px;">
-    	   	<label>Refrigerante</label>
-            <input type="range" id="qtdrefri" min="50" max="70" />
-            <!-- <input type="text" id="qtdrefri" maxlength="5" placeholder="50:70"/> -->
-            <label>Run</label>
-            <input type="range" id="qtdrun" min="10" max="30" />
-            <!-- <input type="text" id="qtdrun" maxlength="5" placeholder="10:30"/> -->
-            <label>Gelo</label>
-            <input type="range" id="qtdgelo" min="0" max="20" />
-    	    <!-- <input type="text" id="qtdgelo" maxlength="5" placeholder="20"/> -->
+            <div class="itens">
+            <img src="images/refri.png" width="50" height="50"/>
+                <input type="range" id="qtdrefri" min="50" onchange='updateValueRange("refri", this.value)' oninput='updateValueRange("refri", this.value)' max="70" />
+                <input type="text" class='valor' disabled id="refri" value="60 ml">
+            </div>
+            <div class="itens">
+            <img src="images/rum.png" width="50" height="50"/>
+                <input type="range" id="qtdrun" min="10" onchange='updateValueRange("run", this.value)' oninput='updateValueRange("run", this.value)' max="30" />
+                <input type="text" class='valor' disabled id="run" value="20 ml">
+            </div>
+            <div class="itens">
+            <img src="images/gelo.png" width="50" height="50"/>
+                <input type="range" id="qtdgelo" min="0" onchange='updateValueRange("gelo", this.value)' oninput='updateValueRange("gelo", this.value)' max="20" />
+                <input type="text" class='valor' disabled id="gelo" value="10 cubos">
+            </div>
         </div>
         <div id="coluna" style="font-size: 20px;">
         	<a href="#" id="btnmix" onclick="mix()"> <b>Misturar</b></a>

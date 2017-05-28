@@ -214,3 +214,12 @@ function  mix() {
     //Mostra as Saídas
     mostrarsaidas();
 }
+
+
+function updateValueRange(item,valor)
+{   var medida = 'ml';
+    if(item == 'gelo'){
+        medida = 'cubos';
+    }
+    document.getElementById(item).value = valor+' '+medida;
+}
