@@ -1,0 +1,34 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/estilo.css" />
+    <title>BotecoGalao</title>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+</head>
+<body>
+	<div id="bloco2" align="center">
+		<h1>Boteco do Galão</h1>
+	</div><br>
+	<div id="bloco2" align="center">
+        <div><b>Escolha CocaCola ou PepsiCola</b></div>
+		<div id="coluna" style="font-size: 20px;">
+			<input type="radio" name="refrigerante" onclick="escolhacoca()" checked > CocaCola
+			<input type="radio" name="refrigerante" onclick="escolhapepsi() "> PepsiCola<br>
+		</div><br>
+        <div><b>Digite a quantidade em ml</b></div>
+		<div id="coluna" style="font-size: 20px;">
+    	   	<label>Refrigerante</label>
+            <input type="text" id="qtdrefri" maxlength="5" placeholder="50:70"/>
+            <label>Run</label>
+    	   	<input type="text" id="qtdrun" maxlength="5" placeholder="10:30"/>
+            <label>Gelo</label>
+    	    <input type="text" id="qtdgelo" maxlength="5" placeholder="20"/>
+        </div>
+        <div id="coluna" style="font-size: 20px;">
+        	<a href="#" id="btnmix" onclick="mix()"> <b>Misturar</b></a>
+        </div>
+        <div id="saidas">
+        </div>
+    </div>
+</body>
