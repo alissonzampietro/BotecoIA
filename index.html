@@ -20,11 +20,14 @@
         <div><b>Digite a quantidade em ml</b></div>
 		<div id="coluna" style="font-size: 20px;">
     	   	<label>Refrigerante</label>
-            <input type="text" id="qtdrefri" maxlength="5" placeholder="50:70"/>
+            <input type="range" id="qtdrefri" min="50" max="70" />
+            <!-- <input type="text" id="qtdrefri" maxlength="5" placeholder="50:70"/> -->
             <label>Run</label>
-    	   	<input type="text" id="qtdrun" maxlength="5" placeholder="10:30"/>
+            <input type="range" id="qtdrun" min="10" max="30" />
+            <!-- <input type="text" id="qtdrun" maxlength="5" placeholder="10:30"/> -->
             <label>Gelo</label>
-    	    <input type="text" id="qtdgelo" maxlength="5" placeholder="20"/>
+            <input type="range" id="qtdgelo" min="0" max="20" />
+    	    <!-- <input type="text" id="qtdgelo" maxlength="5" placeholder="20"/> -->
         </div>
         <div id="coluna" style="font-size: 20px;">
         	<a href="#" id="btnmix" onclick="mix()"> <b>Misturar</b></a>
