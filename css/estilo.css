@@ -1,14 +1,47 @@
 @charset "utf-8";
 /* CSS Document */
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
 body{
-	background-color:#6A2E35;
+	background-image: url('../images/boteco.jpg');
+	background-size: cover;
 	color: #ffffff;
 	font-family: 'Arial';
+	height: 80%;
+}
+
+#saidas {
+	position: absolute;
+	top: 30%;
+	right: 35%;
+	left: 35%;
+	text-align: center;
+	background-color: rgba(0,0,0,0.9);
+	border-radius: 10px;
+	padding: 3em;
 }
 
 h1{
 	color: #ffcc00;
+}
+
+main{
+	padding: 3em;
+	background-color: #002817;
+	width: 40%;
+	min-height: 40em;
+	margin: auto;
+	margin-top: 5%;
+	height: 60%;
+	border-radius: 3em;
 }
 
 #qtdrefri{
@@ -75,8 +108,8 @@ h1{
 .itens {
 	display: block;
 	width: 30%;
-	text-align: left;
 	display: flex;
+	text-align: left;
 }
 
 input[type=range] {
@@ -84,17 +117,32 @@ input[type=range] {
 }
 
 input.valor {
-	background-color: #6A2E35;
 	border: none;
 	outline: none;
 	color: #fff;
+	background: transparent;
 }
-
+.itens input {
+	margin: 1em;
+}
 .cc-selector input{
     margin:0;padding:0;
     -webkit-appearance:none;
     -moz-appearance:none;
     appearance:none;
+}
+
+.bebidas {
+	background: #00331e;
+	text-align: center;
+	display: block;
+	float: left;
+	margin: 0.2em;
+	padding: 1em;
+}
+
+.escolha-bebidas {
+	height: 20em;
 }
 
 .coca{background-image:url('../images/coca.png');}
@@ -123,4 +171,8 @@ input.valor {
     -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
     -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
     filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.oculto {
+	display: none;
 }

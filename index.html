@@ -1,43 +1,58 @@
+<!DOCTYPE html>
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="css/estilo.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/estilo.css" />
     <title>BotecoGalao</title>
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
-	<div id="bloco2" align="center">
-		<h1>Boteco do Galão</h1>
-	</div><br>
-	<div id="bloco2" align="center">
-        <div><b>Escolha CocaCola ou PepsiCola</b></div><br>
-			<div class="cc-selector" align="center">
-                <input id="coca" type="radio" name="credit-card" value="coca" onclick="escolhacoca()" checked >
-                <label class="drinkcard-cc coca" for="coca"></label>
-    			<input id="pepsi" type="radio" name="credit-card" value="pepsi" onclick="escolhapepsi() "> 
-                <label class="drinkcard-cc pepsi"for="pepsi"></label>       
-            </div><br>
-		<div id="coluna" style="font-size: 20px;">
-            <div class="itens">
-            <img src="images/refri.png" width="50" height="50"/>
-                <input type="range" id="qtdrefri" min="50" onchange='updateValueRange("refri", this.value)' oninput='updateValueRange("refri", this.value)' max="70" />
-                <input type="text" class='valor' disabled id="refri" value="60 ml">
+    <main>
+    	<div id="bloco2" align="center">
+    		<h1>Boteco do Galão</h1>
+    	</div><br>
+    	<div id="bloco2" align="center">
+    			<div class="cc-selector" align="center">
+                    <input id="coca" type="radio" name="credit-card" value="coca" onclick="escolhacoca()" checked >
+                    <label class="drinkcard-cc coca" for="coca"></label>
+        			<input id="pepsi" type="radio" name="credit-card" value="pepsi" onclick="escolhapepsi() "> 
+                    <label class="drinkcard-cc pepsi"for="pepsi"></label>       
+                </div><br>
+    		<div id="coluna" class="escolha-bebidas" style="font-size: 20px;">
+                <div class="bebidas">
+                    <img src="images/refri.png" width="70" height="70"/>
+                    <div class="itens">
+                        <input type="range" id="qtdrefri" min="50" onchange='updateValueRange("refri", this.value)' oninput='updateValueRange("refri", this.value)' max="60" />
+                        <input type="text" class='valor' disabled id="refri" value="50 ml">
+                    </div>
+                </div>
+
+                <div class="bebidas">
+                    <img src="images/rum.png" width="70" height="70"/>
+                    <div class="itens">
+                        <input type="range" id="qtdrun" min="10" onchange='updateValueRange("run", this.value)' oninput='updateValueRange("run", this.value)' max="30" />
+                        <input type="text" class='valor' disabled id="run" value="20 ml">
+                    </div>
+                </div>
+
+                <div class="bebidas">
+                    <img src="images/gelo.png" width="70" height="70"/>
+                    <div class="itens">
+                        <input type="range" id="qtdgelo" min="0" onchange='updateValueRange("gelo", this.value)' oninput='updateValueRange("gelo", this.value)' max="20" />
+                        <input type="text" class='valor' disabled id="gelo" value="10 cubos">
+                    </div>
+                </div>
             </div>
-            <div class="itens">
-            <img src="images/rum.png" width="50" height="50"/>
-                <input type="range" id="qtdrun" min="10" onchange='updateValueRange("run", this.value)' oninput='updateValueRange("run", this.value)' max="30" />
-                <input type="text" class='valor' disabled id="run" value="20 ml">
-            </div>
-            <div class="itens">
-            <img src="images/gelo.png" width="50" height="50"/>
-                <input type="range" id="qtdgelo" min="0" onchange='updateValueRange("gelo", this.value)' oninput='updateValueRange("gelo", this.value)' max="20" />
-                <input type="text" class='valor' disabled id="gelo" value="10 cubos">
+            <div id="coluna" style="font-size: 20px;">
+            	<a href="#" id="btnmix" onclick="mix()"> <b>Misturar</b></a>
             </div>
         </div>
-        <div id="coluna" style="font-size: 20px;">
-        	<a href="#" id="btnmix" onclick="mix()"> <b>Misturar</b></a>
-        </div>
-        <div id="saidas">
-        </div>
-    </div>
+    </main>
+            <div id="saidas" class="oculto">
+            </div>
+    <audio autoplay>
+        <source src="images/hino.mp3" id="som" type="audio/mpeg">
+    </audio>
 </body>
+</html>

@@ -1,13 +1,28 @@
 //variaveis 
 refrigerante = 0;
 
+function atualizarCampo()
+{
+    let valorRefri = document.getElementById('qtdrefri').value;
+    document.getElementById('refri').value = valorRefri+' ml';
+}
+
 //Escolha de refrigerante
 function escolhacoca() {
+    let ele = document.getElementById('qtdrefri');
+    ele.min = 50;
+    ele.max = 60;
     refrigerante = 0;
+    atualizarCampo();
+
 }
 
 function escolhapepsi() {
+    let ele = document.getElementById('qtdrefri');
+    ele.min = 60;
+    ele.max = 70;
     refrigerante = 1;
+    atualizarCampo();
 }
 
 //Teste de Sabor (Fuzzificação)
@@ -183,14 +198,14 @@ conteudos='';
             conteudos+=('Sabor da Coca => Forte: '+cocaforte()+' Suave: '+cocasuave()+' Fraco: '+cocafraco()+'<br>Sabor do Run => Forte: '+runforte()+' Suave: '+runsuave()+' Fraco: '+runfraco()+'<br>Sabor do Gelo => '+gelo());
         } else {
             conteudos+='<br><b>Expressões da Questões 2</b><br>';
-            conteudos+=('Sabor da Coca => Forte: '+pepsiforte()+' Suave: '+pepsisuave()+' Fraco: '+pepsifraco()+'<br>Sabor do Run => Forte: '+runforte()+' Suave: '+runsuave()+' Fraco: '+runfraco()+'<br>Sabor do Gelo => '+gelo());
+            conteudos+=('Sabor da Pepsi => Forte: '+pepsiforte()+' Suave: '+pepsisuave()+' Fraco: '+pepsifraco()+'<br>Sabor do Run => Forte: '+runforte()+' Suave: '+runsuave()+' Fraco: '+runfraco()+'<br>Sabor do Gelo => '+gelo());
         };
     conteudos+='<p><b>Expressões da Questões 3</b><br>';
     conteudos+=( 'Forte: '+forte()+' Suave: '+suave()+' Fraco: '+fraco())
     conteudos+=('<p><b>'+definepaladar()+'</b>');
     conteudos+=('<p><b>R$'+ preco+",00</b>");
     $('#saidas').html(conteudos);
-    $('#saidas').show();
+    $('#saidas').removeClass('oculto')
 }
 
 
