@@ -142,8 +142,8 @@ input.valor {
 	height: 20em;
 }
 
-.coca{background-image:url('../images/coca.png');}
-.pepsi{background-image:url('../images/pepsi.png');}
+.coca{background-image:url('../images/coca.jpg');}
+.pepsi{background-image:url('../images/pepsi.jpg');}
 
 .cc-selector input:active +.drinkcard-cc{opacity: .9;}
 .cc-selector input:checked +.drinkcard-cc{
