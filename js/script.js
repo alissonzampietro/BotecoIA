@@ -204,7 +204,7 @@ conteudos='';
     conteudos+=( 'Forte: '+forte()+' Suave: '+suave()+' Fraco: '+fraco())
     conteudos+=('<p><b>'+definepaladar()+'</b>');
     conteudos+=('<p><b>R$'+ preco+",00</b>");
-    $('#saidas').html(conteudos);
+    $('#content-saida').html(conteudos);
     $('#saidas').removeClass('oculto')
 }
 
@@ -238,3 +238,9 @@ function updateValueRange(item,valor)
     }
     document.getElementById(item).value = valor+' '+medida;
 }
+
+$(document).ready(function(){
+    $('.fechar').click(function() {
+        $('#saidas').addClass('oculto');
+    })
+})
