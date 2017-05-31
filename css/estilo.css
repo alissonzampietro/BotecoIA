@@ -79,9 +79,8 @@ main{
 #btnmix{
 	display: block;
 	text-decoration: none;
-	color: #FFF;
-	background-color: #404040;
-	border-bottom: solid 3px #000000;
+	color: #000;
+	background-color: #fff;
 	width: 210px;
 	padding: 5px;
 	margin: 15px;
@@ -95,6 +94,7 @@ main{
 #btnmix:hover{
 	background-color: #000000;
 	border-bottom: solid 1px #1a1a1a;
+	color: #fff;
 }
 
 #btnmix:active {
