@@ -1,5 +1,6 @@
 //variaveis 
-refrigerante = 0;
+var refrigerante = 0;
+var preco = 0; 
 
 function atualizarCampo()
 {
@@ -27,7 +28,8 @@ function escolhapepsi() {
 
 //Teste de Sabor (Fuzzificação)
 //Coca 
-function cocaforte() {
+function cocaforte(qtdrefri) {
+    let refrisaborforte = 0;
     if ( qtdrefri < 50 || qtdrefri > 54 ) {
         refrisaborforte = 0;
     }else if ( 50 <= qtdrefri && qtdrefri < 52 ) {
@@ -38,7 +40,8 @@ function cocaforte() {
     return refrisaborforte;
 }
 
-function cocasuave() {
+function cocasuave(qtdrefri) {
+    let refrisaborsuave = 0;
     if ( qtdrefri < 52 || qtdrefri > 58 ) {
         refrisaborsuave = 0;
     }else if ( 52 <= qtdrefri && qtdrefri <= 54 ) {
@@ -51,7 +54,8 @@ function cocasuave() {
     return refrisaborsuave;
 }
 
-function cocafraco() {
+function cocafraco(qtdrefri) {
+    let  refrisaborfraco = 0;
     if ( qtdrefri < 56 || qtdrefri > 60 ) {
         refrisaborfraco = 0;
     }else if ( 56 <= qtdrefri && qtdrefri < 58 ) {
@@ -63,7 +67,8 @@ function cocafraco() {
 }
 
 //Pepsi 
-function pepsiforte() {
+function pepsiforte(qtdrefri) {
+    let refrisaborforte = 0;
     if ( qtdrefri < 60 || qtdrefri > 64 ) {
         refrisaborforte = 0;
     }else if ( 60 <= qtdrefri && qtdrefri < 62 ) {
@@ -74,7 +79,8 @@ function pepsiforte() {
     return refrisaborforte;
 }
 
-function pepsisuave() {
+function pepsisuave(qtdrefri) {
+    let refrisaborsuave = 0;
     if ( qtdrefri < 62 || qtdrefri > 68 ) {
         refrisaborsuave = 0;
     }else if ( 62 <= qtdrefri && qtdrefri <= 64 ) {
@@ -87,7 +93,8 @@ function pepsisuave() {
     return refrisaborsuave;
 }
 
-function pepsifraco() {
+function pepsifraco(qtdrefri) {
+    let refrisaborfraco = 0;
     if ( qtdrefri < 66 || qtdrefri > 70 ) {
         refrisaborfraco = 0;
     }else if ( 66 <= qtdrefri && qtdrefri < 68 ) {
@@ -99,7 +106,8 @@ function pepsifraco() {
 }
 
 //Run
-function runforte() {
+function runforte(qtdrun) {
+    let runsaborforte = 0;
     if ( qtdrun < 23 || qtdrun > 30 ) {
         runsaborforte = 0;
     }else if ( 23 <= qtdrun && qtdrun < 28 ) {
@@ -110,7 +118,8 @@ function runforte() {
     return runsaborforte;
 }
 
-function runsuave() {
+function runsuave(qtdrun) {
+    let runsaborsuave = 0;
     if ( qtdrun < 15 || qtdrun > 27 ) {
         runsaborsuave = 0;
     }else if ( 15 <= qtdrun && qtdrun <= 20 ) {
@@ -123,7 +132,8 @@ function runsuave() {
     return runsaborsuave;
 }
 
-function runfraco() {
+function runfraco(qtdrun) {
+    let runsaborfraco = 0;
     if ( qtdrun < 10 || qtdrun > 20 ) {
         runsaborfraco = 0;
     }else if ( 10 <= qtdrun && qtdrun < 15 ) {
@@ -135,7 +145,7 @@ function runfraco() {
 }
 
 //Gelo
-function gelo() {
+function gelo(qtdgelo) {
     if ( qtdgelo == 20 ) {
         gelosabor = 1;
     }else {
@@ -146,45 +156,41 @@ function gelo() {
 
 //Teste de Sabor (Defuzzificação)
 //Testa é Suave
-function suave () {
-    valorsuave = Math.max( Math.min ( refrisaborforte, runsaborfraco , gelosabor ) , Math.min ( refrisaborsuave , runsaborsuave , gelosabor ) , Math.min ( refrisaborfraco , runsaborforte , gelosabor ) );
+function suave (refrisaborforte,runsaborfraco,gelosabor,refrisaborsuave ,runsaborsuave, refrisaborfraco,runsaborforte) {
+    let valorsuave = Math.max( Math.min ( refrisaborforte, runsaborfraco , gelosabor ) , Math.min ( refrisaborsuave , runsaborsuave , gelosabor ) , Math.min ( refrisaborfraco , runsaborforte , gelosabor ) );
     return valorsuave;
 }
 
 //Testa é Forte
-function forte () {
-    valorforte = Math.max( Math.min ( refrisaborforte, runsaborsuave , gelosabor ) , Math.min ( refrisaborforte , runsaborforte , gelosabor ) , Math.min ( refrisaborsuave , runsaborforte , gelosabor ) );
+function forte (refrisaborforte, runsaborsuave, gelosabor, runsaborforte,refrisaborsuave) {
+    let valorforte = Math.max( Math.min ( refrisaborforte, runsaborsuave , gelosabor ) , Math.min ( refrisaborforte , runsaborforte , gelosabor ) , Math.min ( refrisaborsuave , runsaborforte , gelosabor ) );
     return valorforte;
 }
 
 //Testa é fraco
-function fraco () {
-    valorfraco = Math.max( Math.min ( refrisaborfraco, runsaborfraco , gelosabor ) , Math.min ( refrisaborfraco , runsaborsuave , gelosabor ) , Math.min ( refrisaborsuave , runsaborfraco , gelosabor ) );
+function fraco (refrisaborfraco ,runsaborfraco, gelosabor , runsaborsuave,refrisaborsuave,) {
+    let valorfraco = Math.max( Math.min ( refrisaborfraco, runsaborfraco , gelosabor ) , Math.min ( refrisaborfraco , runsaborsuave , gelosabor ) , Math.min ( refrisaborsuave , runsaborfraco , gelosabor ) );
     return valorfraco
 }
 
 //Define Paladar e Preço
-function definepaladar () {
-//adicionar variaveis
-dpsuave = suave();
-dpfraco = fraco();
-dpforte = forte();
-
-//Paladar
-if (dpfraco == 0 && dpsuave == 0 && dpforte == 0) {
-    paladar = "Não é Cuba Livre";
-    preco = 0; 
-}else if ( dpfraco > dpsuave && dpfraco > dpforte ) {
-    paladar = "Fraco";
-    preco = 15;
-}else if( dpsuave >= dpfraco && dpsuave > dpforte ){
-    paladar = "Suave";
-    preco = 20;
-}else if( dpforte >= dpfraco && dpforte >= dpsuave){
-    paladar = "Forte";
-    preco = 25;
-};
-return paladar;
+function definepaladar (dpsuave ,dpfraco, dpforte) {
+    let paladar = "";
+    //Paladar
+    if (dpfraco == 0 && dpsuave == 0 && dpforte == 0) {
+        paladar = "Não é Cuba Livre";
+        preco = 0; 
+    }else if ( dpfraco > dpsuave && dpfraco > dpforte ) {
+        paladar = "Fraco";
+        preco = 15;
+    }else if( dpsuave >= dpfraco && dpsuave > dpforte ){
+        paladar = "Suave";
+        preco = 20;
+    }else if( dpforte >= dpfraco && dpforte >= dpsuave){
+        paladar = "Forte";
+        preco = 25;
+    };
+    return paladar;
 }
 
 
@@ -192,16 +198,38 @@ return paladar;
 
 //Mostra a Saídas
 function  mostrarsaidas() {
-conteudos='';
+    //refrigerante == 0  é coca
+    preco = 0; 
+    //Variaveis
+    const  qtdrefri= $('#qtdrefri').val();
+    const qtdrun= $('#qtdrun').val();
+    const qtdgelo= $('#qtdgelo').val();
+
+    //Reinicia variaveis 
+    const refrisaborsuave= refrigerante == 0 ? cocasuave(qtdrefri) : pepsisuave(qtdrefri);
+    const refrisaborfraco= refrigerante == 0 ? cocafraco(qtdrefri) : pepsifraco(qtdrefri);
+    const refrisaborforte= refrigerante == 0 ? cocaforte(qtdrefri) : pepsiforte(qtdrefri);
+    const runsaborsuave= runsuave(qtdrun) ;
+    const runsaborforte= runforte(qtdrun) ;
+    const runsaborfraco= runfraco(qtdrun) ;
+    const gelosabor= gelo(qtdgelo);
+
+        //adicionar variaveis
+    const dpsuave = suave(refrisaborforte,runsaborfraco,gelosabor,refrisaborsuave,runsaborsuave,refrisaborfraco,runsaborforte);
+    const dpfraco = fraco(refrisaborfraco,runsaborfraco,gelosabor,runsaborsuave,refrisaborsuave);
+    const dpforte = forte(refrisaborforte,runsaborsuave,gelosabor,runsaborforte,refrisaborsuave);
+
+
+    let conteudos='';
     if (refrigerante == 0) {
             conteudos+='<br><b>Expressões da Questões 2</b><br>';
-            conteudos+=('Sabor da Coca => Forte: '+cocaforte()+' Suave: '+cocasuave()+' Fraco: '+cocafraco()+'<br>Sabor do Run => Forte: '+runforte()+' Suave: '+runsuave()+' Fraco: '+runfraco()+'<br>Sabor do Gelo => '+gelo());
+            conteudos+=('Sabor da Coca => Forte: '+cocaforte(qtdrefri)+' Suave: '+cocasuave(qtdrefri)+' Fraco: '+cocafraco(qtdrefri)+'<br>Sabor do Run => Forte: '+runforte(qtdrun)+' Suave: '+runsuave(qtdrun)+' Fraco: '+runfraco(qtdrun)+'<br>Sabor do Gelo => '+gelo(qtdgelo));
         } else {
             conteudos+='<br><b>Expressões da Questões 2</b><br>';
-            conteudos+=('Sabor da Pepsi => Forte: '+pepsiforte()+' Suave: '+pepsisuave()+' Fraco: '+pepsifraco()+'<br>Sabor do Run => Forte: '+runforte()+' Suave: '+runsuave()+' Fraco: '+runfraco()+'<br>Sabor do Gelo => '+gelo());
+            conteudos+=('Sabor da Pepsi => Forte: '+pepsiforte(qtdrefri)+' Suave: '+pepsisuave(qtdrefri)+' Fraco: '+pepsifraco(qtdrefri)+'<br>Sabor do Run => Forte: '+runforte()+' Suave: '+runsuave(qtdrun)+' Fraco: '+runfraco(qtdrun)+'<br>Sabor do Gelo => '+gelo(qtdgelo));
         };
     conteudos+='<p><b>Expressões da Questões 3</b><br>';
-    conteudos+=( 'Forte: '+forte()+' Suave: '+suave()+' Fraco: '+fraco())
+    conteudos+=( 'Forte: '+dpforte+' Suave: '+dpsuave+' Fraco: '+dpsuave)
     conteudos+=('<p><b>'+definepaladar()+'</b>');
     conteudos+=('<p><b>R$'+ preco+",00</b>");
     $('#content-saida').html(conteudos);
@@ -211,21 +239,6 @@ conteudos='';
 
 //Função principal
 function  mix() {
-    
-    //Variaveis
-    qtdrefri= $('#qtdrefri').val();
-    qtdrun= $('#qtdrun').val();
-    qtdgelo= $('#qtdgelo').val();
-
-    //Reinicia variaveis 
-    refrisaborsuave=0;
-    refrisaborfraco=0;
-    refrisaborforte=0;
-    runsaborsuave=0;
-    runsaborforte=0;
-    runsaborfraco=0;
-    gelosabor=0;
-
     //Mostra as Saídas
     mostrarsaidas();
 }
