@@ -229,7 +229,7 @@ function  mostrarsaidas() {
             conteudos+=('Sabor da Pepsi => Forte: '+refrisaborforte+' Suave: '+refrisaborsuave+' Fraco: '+refrisaborfraco+'<br>Sabor do Run => Forte: '+ runsaborforte+' Suave: '+runsaborsuave+' Fraco: '+runsaborfraco+'<br>Sabor do Gelo => '+gelosabor);
         };
     conteudos+='<p><b>Expressões da Questões 3</b><br>';
-    conteudos+=( 'Forte: '+dpforte+' Suave: '+dpsuave+' Fraco: '+dpsuave)
+    conteudos+=( 'Forte: '+dpforte+' Suave: '+dpsuave+' Fraco: '+dpfraco)
     conteudos+=('<p><b>'+definepaladar(dpsuave, dpfraco,dpforte)+'</b>');
     conteudos+=('<p><b>R$'+ preco+",00</b>");
     $('#content-saida').html(conteudos);
