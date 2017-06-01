@@ -223,14 +223,14 @@ function  mostrarsaidas() {
     let conteudos='';
     if (refrigerante == 0) {
             conteudos+='<br><b>Expressões da Questões 2</b><br>';
-            conteudos+=('Sabor da Coca => Forte: '+cocaforte(qtdrefri)+' Suave: '+cocasuave(qtdrefri)+' Fraco: '+cocafraco(qtdrefri)+'<br>Sabor do Run => Forte: '+runforte(qtdrun)+' Suave: '+runsuave(qtdrun)+' Fraco: '+runfraco(qtdrun)+'<br>Sabor do Gelo => '+gelo(qtdgelo));
+            conteudos+=('Sabor da Coca => Forte: '+refrisaborforte+' Suave: '+refrisaborsuave+' Fraco: '+runsaborfraco+'<br>Sabor do Run => Forte: '+runforte+' Suave: '+runsuave+' Fraco: '+runfraco+'<br>Sabor do Gelo => '+gelo);
         } else {
             conteudos+='<br><b>Expressões da Questões 2</b><br>';
-            conteudos+=('Sabor da Pepsi => Forte: '+pepsiforte(qtdrefri)+' Suave: '+pepsisuave(qtdrefri)+' Fraco: '+pepsifraco(qtdrefri)+'<br>Sabor do Run => Forte: '+runforte()+' Suave: '+runsuave(qtdrun)+' Fraco: '+runfraco(qtdrun)+'<br>Sabor do Gelo => '+gelo(qtdgelo));
+            conteudos+=('Sabor da Pepsi => Forte: '+refrisaborforte+' Suave: '+refrisaborsuave+' Fraco: '+runsaborfraco+'<br>Sabor do Run => Forte: '+rrunforte+' Suave: '+rrunsuave+' Fraco: '+runfraco+'<br>Sabor do Gelo => '+gelo);
         };
     conteudos+='<p><b>Expressões da Questões 3</b><br>';
     conteudos+=( 'Forte: '+dpforte+' Suave: '+dpsuave+' Fraco: '+dpsuave)
-    conteudos+=('<p><b>'+definepaladar()+'</b>');
+    conteudos+=('<p><b>'+definepaladar(dpsuave, dpfraco,dpforte)+'</b>');
     conteudos+=('<p><b>R$'+ preco+",00</b>");
     $('#content-saida').html(conteudos);
     $('#saidas').removeClass('oculto')
