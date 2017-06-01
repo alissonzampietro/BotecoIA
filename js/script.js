@@ -223,10 +223,10 @@ function  mostrarsaidas() {
     let conteudos='';
     if (refrigerante == 0) {
             conteudos+='<br><b>Expressões da Questões 2</b><br>';
-            conteudos+=('Sabor da Coca => Forte: '+refrisaborforte+' Suave: '+refrisaborsuave+' Fraco: '+runsaborfraco+'<br>Sabor do Run => Forte: '+runforte+' Suave: '+runsuave+' Fraco: '+runfraco+'<br>Sabor do Gelo => '+gelo);
+            conteudos+=('Sabor da Coca => Forte: '+refrisaborforte+' Suave: '+refrisaborsuave+' Fraco: '+refrisaborfraco+'<br>Sabor do Run => Forte: '+runsaborforte+' Suave: '+runsaborsuave+' Fraco: '+runsaborfraco+'<br>Sabor do Gelo => '+gelosabor);
         } else {
             conteudos+='<br><b>Expressões da Questões 2</b><br>';
-            conteudos+=('Sabor da Pepsi => Forte: '+refrisaborforte+' Suave: '+refrisaborsuave+' Fraco: '+runsaborfraco+'<br>Sabor do Run => Forte: '+rrunforte+' Suave: '+rrunsuave+' Fraco: '+runfraco+'<br>Sabor do Gelo => '+gelo);
+            conteudos+=('Sabor da Pepsi => Forte: '+refrisaborforte+' Suave: '+refrisaborsuave+' Fraco: '+refrisaborfraco+'<br>Sabor do Run => Forte: '+ runsaborforte+' Suave: '+runsaborsuave+' Fraco: '+runsaborfraco+'<br>Sabor do Gelo => '+gelosabor);
         };
     conteudos+='<p><b>Expressões da Questões 3</b><br>';
     conteudos+=( 'Forte: '+dpforte+' Suave: '+dpsuave+' Fraco: '+dpsuave)
